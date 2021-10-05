@@ -1,0 +1,3 @@
+# Example config.yaml, to be placed in the home directory of the goddns user
+api_token: AAAaaaaBAaaaaAAAaa # The CloudFlare API Token
+zone_id: asdasdasdasdassaasd2222 # The CloudFlare DNS Zone ID

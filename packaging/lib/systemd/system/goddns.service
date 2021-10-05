@@ -1,0 +1,7 @@
+[Unit]
+Description=goddns
+
+[Service]
+User=goddns
+ExecStart=/usr/local/bin/goddns
+Type=oneshot
