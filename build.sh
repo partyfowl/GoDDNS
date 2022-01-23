@@ -16,4 +16,4 @@ GOOS=linux GOARCH=arm go build -o build/goddns/usr/local/bin/
 cd build
 dpkg-deb --build goddns
 
-mv goddns.deb goddns-$(dpkg-parsechangelog --show-field Version).deb
+mv goddns.deb goddns-$(dpkg-deb -f goddns.deb Version).deb
