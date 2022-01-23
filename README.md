@@ -3,7 +3,7 @@
 ## Prerequisites
 
 - CloudFlare Account with registered domain
-- Go (tested with 1.13.8)
+- Go (tested with 1.17.6)
 
 ## Build
 
