@@ -16,4 +16,13 @@ GOOS=linux GOARCH=arm go build -o build/goddns/usr/local/bin/
 cd build
 dpkg-deb --build goddns
 
-mv goddns.deb goddns-$(dpkg-deb -f goddns.deb Version).deb
+
+if [[ -z "${GITHUB_REF_NAME}" ]]; then
+
+else
+  if [[ "${GITHUB_REF_NAME}" == "main" ]]
+    mv goddns.deb goddns-$(dpkg-deb -f goddns.deb Version).deb
+  else
+    mv goddns.deb goddns-$(dpkg-deb -f goddns.deb Version)-${GITHUB_REF_NAME}.deb
+  fi
+fi
