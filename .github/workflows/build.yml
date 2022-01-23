@@ -2,13 +2,9 @@ name: Build
 
 on:
   push:
-    branches:
-      - main
     paths:
       - packaging/DEBIAN/control
   pull_request:
-    branches:
-      - main
     paths:
       - packaging/DEBIAN/control
 
