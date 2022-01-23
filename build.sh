@@ -3,6 +3,8 @@ set -e
 rm -rf build
 mkdir build
 
+chmod 775 -R packaging/DEBIAN/*inst
+
 cp -r packaging build/goddns
 
 mkdir -p build/goddns/usr/local/bin/
