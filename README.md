@@ -17,7 +17,7 @@ To build a debian package:
 
 ## Install
 
-Copy the generated `build/goddns.deb` file to the Raspberry Pi.
+Copy the generated `build/goddns-<version>.deb` file to the Raspberry Pi.
 
 Run the following commands:
 
