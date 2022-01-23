@@ -3,20 +3,17 @@ set -e
 rm -rf build
 mkdir build
 
-if [[ -z "${GITHUB_RUN_NUMBER}" ]]; then
-    PACKAGE_NAME=goddns
-else
-    PACKAGE_NAME=goddns-${GITHUB_RUN_NUMBER}
-    sed -i "s/^\(Version:\s*\).*$/\1${GITHUB_RUN_NUMBER}/" packaging/DEBIAN/control
-fi
+
 
 chmod 775 -R packaging/DEBIAN/*inst
 
-cp -r packaging build/$PACKAGE_NAME
+cp -r packaging build/goddns
 
-mkdir -p build/$PACKAGE_NAME/usr/local/bin/
+mkdir -p build/goddns/usr/local/bin/
 go get
-GOOS=linux GOARCH=arm go build -o build/$PACKAGE_NAME/usr/local/bin/
+GOOS=linux GOARCH=arm go build -o build/goddns/usr/local/bin/
 
 cd build
-dpkg-deb --build $PACKAGE_NAME
+dpkg-deb --build goddns
+
+mv goddns.deb goddns-$(dpkg-parsechangelog --show-field Version).deb
