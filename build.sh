@@ -17,10 +17,10 @@ cd build
 dpkg-deb --build goddns
 
 
-if [[ -z "${GITHUB_REF_NAME}" ]]; then
-
-else
+if [[ -n "${GITHUB_REF_NAME}" ]]
+then
   if [[ "${GITHUB_REF_NAME}" == "main" ]]
+  then
     mv goddns.deb goddns-$(dpkg-deb -f goddns.deb Version).deb
   else
     mv goddns.deb goddns-$(dpkg-deb -f goddns.deb Version)-${GITHUB_REF_NAME}.deb

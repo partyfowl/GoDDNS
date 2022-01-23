@@ -1,5 +1,5 @@
 Package: GoDDNS
-Version: 0.0.1
+Version: 0.0.2
 Architecture: armhf
 Maintainer: partyfowl
 Description: Dynamic DNS client, updating results in CloudFlare every 60 seconds, designed to run on a Raspberry Pi
