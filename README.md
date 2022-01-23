@@ -4,6 +4,7 @@
 
 - CloudFlare Account with registered domain
 - Go (tested with 1.17.6)
+- dpkg-deb
 
 ## Build
 
