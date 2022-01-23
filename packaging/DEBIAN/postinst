@@ -1,0 +1,3 @@
+username=goddns
+
+chown ${username}:${username} /home/${username}

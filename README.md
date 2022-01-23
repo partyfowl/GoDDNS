@@ -22,10 +22,9 @@ Run the following commands:
 
 ```bash
 sudo apt-get install ./goddns.deb
-sudo mkdir -p /home/goddns/.goddns
 ```
 
-Create a `config.yaml` file within `/home/goddns/.goddns` containing the CloudFlare API Key and Hosted Zone ID.
+Update `/home/goddns/.goddns/config.yaml` to include the CloudFlare API Key and Hosted Zone ID.
 
 Finally, enable the service:
 
