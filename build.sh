@@ -4,10 +4,10 @@ rm -rf build
 mkdir build
 
 if [[ -z "${GITHUB_RUN_NUMBER}" ]]; then
-    PACKAGE_NAME=goddns-${GITHUB_RUN_NUMBER}.deb
-    sed -i "s/^\(Version:\s*\).*$/\1${GITHUB_RUN_NUMBER}/" packaging/DEBIAN/control
+    PACKAGE_NAME=goddns
 else
-    PACKAGE_NAME=goddns.deb
+    PACKAGE_NAME=goddns-${GITHUB_RUN_NUMBER}
+    sed -i "s/^\(Version:\s*\).*$/\1${GITHUB_RUN_NUMBER}/" packaging/DEBIAN/control
 fi
 
 chmod 775 -R packaging/DEBIAN/*inst
